@@ -1,10 +1,10 @@
 # xdp
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/asavie/xdp.svg)](https://pkg.go.dev/github.com/asavie/xdp)
+[![Go Reference](https://pkg.go.dev/badge/github.com/slavc/xdp.svg)](https://pkg.go.dev/github.com/slavc/xdp)
 
-Package github.com/asavie/xdp allows one to use [XDP sockets](https://lwn.net/Articles/750845/) from the Go programming language.
+Package github.com/slavc/xdp allows one to use [XDP sockets](https://lwn.net/Articles/750845/) from the Go programming language.
 
-For usage examples, see the [documentation](https://pkg.go.dev/github.com/asavie/xdp) or the [examples/](https://github.com/asavie/xdp/tree/master/examples) directory.
+For usage examples, see the [documentation](https://pkg.go.dev/github.com/slavc/xdp) or the [examples/](https://github.com/slavc/xdp/tree/master/examples) directory.
 
 ## Performance
 
@@ -14,14 +14,14 @@ With the default UDP payload size of 1400 bytes, running on Linux kernel
 5.1.20, on a
 [tg3](https://github.com/torvalds/linux/blob/master/drivers/net/ethernet/broadcom/tg3.c)
 (so no native XDP support) gigabit NIC,
-[sendudp.go](https://github.com/asavie/xdp/blob/master/examples/sendudp/sendudp.go)
+[sendudp.go](https://github.com/slavc/xdp/blob/master/examples/sendudp/sendudp.go)
 does around 980 Mb/s, so practically line rate.
 
 ### examples/senddnsqueries
 
 TL;DR: in the same environment, sending a pre-generated DNS query using an
 ordinary UDP socket yields around 30 MiB/s whereas sending it using the
-[senddnsqueries.go](https://github.com/asavie/xdp/blob/master/examples/senddnsqueries/senddnsqueries.go)
+[senddnsqueries.go](https://github.com/slavc/xdp/blob/master/examples/senddnsqueries/senddnsqueries.go)
 example program yields around 77 MiB/s.
 
 Connecting a PC with Intel Core i7-7700 CPU running Linux kernel 5.0.17 and igb
@@ -38,7 +38,7 @@ import (
 
 func main() {
 	query := new(dns.Msg)
-	query.SetQuestion(dns.Fqdn("asavie.com"), dns.TypeA)
+	query.SetQuestion(dns.Fqdn("slavc.com"), dns.TypeA)
 	payload, err := query.Pack()
 	if err != nil {
 		panic(err)
@@ -66,6 +66,6 @@ func main() {
 which uses an ordinary UDP socket to send a pre-generated DNS query from PC to
 laptop as quickly as possible - I get about 30 MiB/s at laptop side.
 
-Using the [senddnsqueries.go](https://github.com/asavie/xdp/blob/master/examples/senddnsqueries/senddnsqueries.go)
+Using the [senddnsqueries.go](https://github.com/slavc/xdp/blob/master/examples/senddnsqueries/senddnsqueries.go)
 example program - I get about 77 MiB/s at laptop side.
 
