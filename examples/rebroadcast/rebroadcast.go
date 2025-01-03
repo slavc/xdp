@@ -6,7 +6,7 @@
 
 /*
 rebroadcast demonstrates how to receive and transmit network frames using
-the github.com/asavie/xdp package, it receives frames on the given network
+the github.com/slavc/xdp package, it receives frames on the given network
 interface using an XDP socket, prints the received frames to stdout,
 modifies their the destination MAC address to the broadcast address of
 ff:ff:ff:ff:ff:ff in-line and sends the frames back out the same network
@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/asavie/xdp"
+	"github.com/slavc/xdp"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 )

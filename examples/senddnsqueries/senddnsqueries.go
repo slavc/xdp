@@ -12,10 +12,10 @@ import (
 	"net"
 	"time"
 
-	"github.com/asavie/xdp"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 	"github.com/miekg/dns"
+	"github.com/slavc/xdp"
 	"github.com/vishvananda/netlink"
 )
 
@@ -37,7 +37,7 @@ func main() {
 	flag.StringVar(&DstMAC, "dstmac", "ffffffffffff", "Destination MAC address to use in sent frames.")
 	flag.StringVar(&SrcIP, "srcip", "192.168.111.1", "Source IP address to use in sent frames.")
 	flag.StringVar(&DstIP, "dstip", "192.168.111.10", "Destination IP address to use in sent frames.")
-	flag.StringVar(&DomainName, "domain", "asavie.com", "Domain name to use in the DNS query.")
+	flag.StringVar(&DomainName, "domain", "google.com", "Domain name to use in the DNS query.")
 	flag.Parse()
 
 	// Initialize the XDP socket.

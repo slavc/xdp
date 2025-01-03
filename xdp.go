@@ -41,7 +41,7 @@ transmits them back out the same network link:
 		"os/signal"
 		"syscall"
 
-		"github.com/asavie/xdp"
+		"github.com/slavc/xdp"
 		"github.com/vishvananda/netlink"
 	)
 

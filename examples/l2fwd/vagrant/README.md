@@ -1,7 +1,7 @@
 # l2fwd test environment
 
 This directory contains Vagrant configuration files which will bring up a test
-environment for [l2fwd](https://github.com/asavie/xdp/examples/l2fwd/l2fwd.go).
+environment for [l2fwd](https://github.com/slavc/xdp/examples/l2fwd/l2fwd.go).
 
 The enviornment consists of 3 virtual machines, 'Server', where you run the
 `iperf` server, 'Client' where you run the `iperf` client and 'L2fwd', where
